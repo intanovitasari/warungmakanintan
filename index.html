@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>Selamat Menunggu</title>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #f8f5f5;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #b6a36f;
+            padding-bottom: 20px;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .menu-item-details {
+            flex-grow: 1;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> RUMAH MAKAN INTAN </h1>
+    </header>
+    <div class="container">
+        <div class="menu-item">
+            <img src="foto spaghetti.jpeg" alt="spaghetti">
+            <div class="menu-item-details">
+                <h2>Spaghetti</h2>
+                <p>A classic Italian pasta dish served with marinara sauce.</p>
+                <p>Rp 15.000</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="foto burger.webp" alt="Burger">
+            <div class="menu-item-details">
+                <h2>Burger</h2>
+                <p>A juicy beef patty topped with lettuce, tomato, onion, and cheese.</p>
+                <p>Rp 20.000</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="fto salad.webp" alt="Salad">
+            <div class="menu-item-details">
+                <h2>Salad</h2>
+                <p>Fresh mixed greens with tomatoes, cucumbers, carrots, and your choice of dressing.</p>
+                <p>Rp 10.000</p>
+            </div>
+        </div>
+        <h2>Order Form</h2>
+        <form id="order-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="No-pesanan">No pesanan:</label>
+            <input type="text" id="No-number" name="No-pesanan" required>
+            <br>
+            <label for="item">Select Item:</label>
+            <select name="item" id="item">
+                <option value="spaghetti">Spaghetti</option>
+                <option value="burger">Burger</option>
+                <option value="salad">Salad</option>
+            </select>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+            <br>
+            <button type="submit">Submit Order</button>
+        </form>
+        <div id="response"></div>
+        <div id="total-price"></div>
+    </div>
+    <script>
+        document.getElementById("order-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir secara default
+
+            // Mengumpulkan data dari formulir
+            var name = document.getElementById("name").value;
+            var orderNumber = document.getElementById("No-number").value;
+            var selectedItem = document.getElementById("item").value;
+            var quantity = document.getElementById("quantity").value;
+            var selamatmenunggu = document.getElementById("selamatmenunggu).value;
+
+            // Menampilkan respons
+            var responseText = "Nama: " + name + "<br>";
+            responseText += "No pesanan: " + orderNumber + "<br>";
+            responseText += "Item: " + selectedItem + "<br>";
+            responseText += "Total beli: " + quantity + "<br>";
+            responseText += "selamat menunggu: " + quantity + "<br>";
+            document.getElementById("response").innerHTML = responseText;
+
+            // Reset formulir setelah pengiriman
+            document.getElementById("order-form").reset();
+        });
+    </script>
+            <script src="script.js"></script>
+</body>
+</html>
